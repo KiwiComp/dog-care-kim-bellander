@@ -2,6 +2,7 @@ import { useOutletContext } from "react-router";
 import {useState} from 'react';
 import DisplayDogsComponent from "../COMPONENTS/DisplayDogsComponent";
 import "../CSS/all-dogs-style.css";
+import OverlayDisplayDogDetailsComponent from "../COMPONENTS/OverlayDisplayDogDetailsComponent";
 
 
 
@@ -9,6 +10,7 @@ import "../CSS/all-dogs-style.css";
 function AllDogsPage() {
 
     const {dogList} = useOutletContext();
+    const [selectedDog, setSelectedDog] = useState(null);
     const [searchName, setSearchName] = useState("");
     const [searchList, setSearchList] = useState([]);
     const [listIsSearched, setListIsSearched] = useState(false);
@@ -39,15 +41,12 @@ function AllDogsPage() {
             <h2>All of our dogs</h2>
 
             <section className="searchDogsContainer">
-                {/* column */}
                 <button className="btnAllDogs" onClick={resetSearch}>Display all dogs</button>
 
                 <p>Filter</p>
 
                 <article className="specificSearchContainer">
-                    {/* row */}
                     <article className="nameSearchContainer">
-                        {/* row */}
                         <input 
                             type="text" 
                             placeholder="Name of dog"
@@ -67,15 +66,20 @@ function AllDogsPage() {
 
                 {listIsSearched ? (
                     searchList.map((dog) => (
-                        <DisplayDogsComponent key={dog.chipNumber} dog={dog}/>
+                        <DisplayDogsComponent key={dog.chipNumber} dog={dog} setSelectedDog={setSelectedDog}/>
                     ))
                 ) : (
                     dogList.map((dog) => (
-                        <DisplayDogsComponent key={dog.chipNumber} dog={dog}/>
+                        <DisplayDogsComponent key={dog.chipNumber} dog={dog} setSelectedDog={setSelectedDog}/>
                     ))
                 )}
 
             </section>
+
+            {selectedDog && (
+                <OverlayDisplayDogDetailsComponent selectedDog={selectedDog} setSelectedDog={setSelectedDog}/>
+            )}
+
         </section>
     )
 }

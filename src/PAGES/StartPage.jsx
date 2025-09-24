@@ -1,12 +1,15 @@
 import { useOutletContext } from "react-router";
+import {useState} from 'react';
 import "../CSS/start-page-style.css"
 import companyLogo from "../assets/companyLogo.webp"
 import DisplayDogsComponent from "../COMPONENTS/DisplayDogsComponent";
+import OverlayDisplayDogDetailsComponent from "../COMPONENTS/OverlayDisplayDogDetailsComponent";
 
 
 function StartPage() {
 
     const {fourDogsList} = useOutletContext();
+    const [selectedDog, setSelectedDog] = useState(null);
 
     return(
         <section className="startPage">
@@ -29,9 +32,15 @@ function StartPage() {
 
             <section className="displayDogsContainer">
                 {fourDogsList.map((dog) => (
-                    <DisplayDogsComponent key={dog.chipNumber} dog={dog}/>
+                    <DisplayDogsComponent key={dog.chipNumber} dog={dog} setSelectedDog={setSelectedDog}/>
                 ))}
             </section>
+
+            {selectedDog && (
+                <OverlayDisplayDogDetailsComponent selectedDog={selectedDog} setSelectedDog={setSelectedDog}/>
+            )}
+
+
         </section>
         
     )
