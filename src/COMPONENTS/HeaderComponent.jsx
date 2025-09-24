@@ -20,6 +20,7 @@ function HeaderComponent() {
             </section>
             <section className="rightHeader desktopOnly">
                 <Link to="/">Start Page</Link>
+                <Link to="/all-dogs">All our dogs</Link>
             </section>
             {/* DESKTOP ONLY */}
 
@@ -33,6 +34,7 @@ function HeaderComponent() {
 
                     <article className={dropdownIsVisible ? "dropdownMenu visible" : "dropdownMenu hidden"}>
                         <Link to="/" onClick={() => setDropdownIsVisible(false)}>Start page</Link>
+                        <Link to="/all-dogs" onClick={() => setDropdownIsVisible(false)}>All our dogs</Link>
                     </article>
                 </article>
             </section>

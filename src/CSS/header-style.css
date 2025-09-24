@@ -1,7 +1,7 @@
 
 .header {
     /* background-color: rgb(211, 211, 211); */
-    background: linear-gradient(to bottom, rgb(234, 235, 234), rgb(128, 186, 157)), rgb(60, 89, 60);
+    background: linear-gradient(to bottom, rgb(235, 239, 235), rgb(73, 108, 91));
 }
 
 @media(max-width: 420px) {
@@ -21,15 +21,27 @@
     }
 
     .dropdownMenu.visible {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
         background-color: rgb(239, 239, 239);
-        padding: 0.3rem;
+        padding: 0.6rem;
+        
         border-radius: 0.2rem;
     }
 
     .dropdownMenu.visible a {
+        width: 100%;
+        text-align: center;
         font-family: 'Courier New', Courier, monospace;
         text-decoration: none;
         color: rgb(77, 77, 77);
+        border: 0.3px solid black;
+        border-radius: 0.2rem;
+        padding: 0.3rem;
+        background-color: rgb(198, 225, 209);
     }
 
     .dropdownMenu.hidden {
@@ -43,8 +55,26 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        /* Padding krivs alltid i ordningen: top | right | bottom | left (klockvis från toppen) */
         padding: 0.5rem 1rem 0.5rem 1rem;
+    }
+
+    .rightHeader {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .rightHeader a {
+        text-decoration: none;
+        font-family: 'Courier New', Courier, monospace;
+        background-color: rgb(154, 186, 171);
+        color: rgb(19, 36, 19);
+        border: 1px solid rgb(73, 108, 91);
+        border-radius: 0.1rem;
+        padding: 0.5rem;
+    }
+
+    .rightHeader a:hover {
+        background-color: rgb(73, 108, 91);
     }
 }
 
