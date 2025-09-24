@@ -1,0 +1,94 @@
+
+
+.overlaySelectedDog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.608);
+    height: 100%;
+    width: 100%;
+}
+
+.overlayWindowSelectedDog {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+    background-color: whitesmoke;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+.overlayWindowSelectedDog p{
+    text-align: center;
+}
+
+.titleSelectedDog {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.titleNameSelectedDog {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3rem;
+}
+
+.selectedDogContainer {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.selectedDogImgContainer {
+    border: 1px solid black;
+    border-radius: 1rem;
+    overflow: hidden;          
+    position: relative;
+}
+
+.selectedDogImgContainer img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;         
+    display: block;            
+}
+
+.selectedDogInfoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+@media(max-width: 420px) {
+    .selectedDogContainer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .selectedDogInfoContainer {
+        font-size: 1rem;
+        gap: 1rem;
+    }
+}
+
+@media(min-width: 420px) {
+    .selectedDogContainer {
+        flex-direction: row;
+        gap: 3rem;
+    }
+
+    .selectedDogInfoContainer {
+        font-size: 1.5rem;
+        width: 60%;
+        gap: 3rem;
+    }
+}
