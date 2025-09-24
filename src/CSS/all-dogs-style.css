@@ -28,7 +28,9 @@
 .searchDogsContainer {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .btnAllDogs {
@@ -36,12 +38,20 @@
     border-radius: 0.5rem;
     border: 1px solid gray;
     font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(174, 200, 188);
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+}
+
+.btnAllDogs:hover {
+    background-color: rgb(115, 160, 139);
 }
 
 .nameSearchContainer input {
     padding: 0.3rem;
     border-radius: 0.3rem;
     border: 1px solid gray;
+    text-align: center;
 }
 
 .nameSearchContainer input:focus {

@@ -12,6 +12,7 @@ function DisplayDogsComponent({dog}) {
 
             <article className="dogInfoContainer">
                 <p><strong>{dog.name}</strong></p>
+                <span className={`dogStatus ${dog.present ? "current" : "notCurrent"}`}></span>
             </article>
             
         </section>
