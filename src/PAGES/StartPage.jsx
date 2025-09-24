@@ -1,6 +1,7 @@
 import { useOutletContext } from "react-router";
 import "../CSS/start-page-style.css"
 import companyLogo from "../assets/companyLogo.webp"
+import DisplayDogsComponent from "../COMPONENTS/DisplayDogsComponent";
 
 
 function StartPage() {
@@ -28,17 +29,7 @@ function StartPage() {
 
             <section className="displayDogsContainer">
                 {fourDogsList.map((dog) => (
-                    <section key={dog.chipNumber} className="displaySingleDogContainer">
-
-                        <article className="dogImgContainer">
-                            <img src={dog.img} alt={dog.name} ></img>
-                        </article>
-
-                        <article className="dogInfoContainer">
-                            <p><strong>{dog.name}</strong></p>
-                        </article>
-                        
-                    </section>
+                    <DisplayDogsComponent key={dog.chipNumber} dog={dog}/>
                 ))}
             </section>
         </section>
