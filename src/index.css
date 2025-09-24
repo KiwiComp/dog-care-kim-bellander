@@ -8,3 +8,23 @@ html, body, #root {
   height: 100%;
   background-color: rgb(231, 231, 231);
 }
+
+@media(max-width: 420px) {
+  .mobileOnly {
+    display: block;
+  }
+
+  .desktopOnly {
+    display: none;
+  }
+}
+
+@media(min-width: 420px) {
+  .mobileOnly {
+    display: none;
+  }
+
+  .desktopOnly {
+    display: block;
+  }
+}

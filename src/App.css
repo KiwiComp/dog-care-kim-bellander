@@ -8,5 +8,6 @@
 }
 
 .mainContent {
-  background-color: rgb(166, 206, 241);
+  background-color: rgb(240, 240, 240);
+  display: block;
 }
