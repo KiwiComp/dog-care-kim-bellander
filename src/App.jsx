@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import "./CSS/display-dogs-grid.css"
 import { Outlet } from 'react-router'
 import HeaderComponent from './COMPONENTS/HeaderComponent'
 import FooterComponent from './COMPONENTS/FooterComponent'
@@ -44,7 +45,8 @@ function App() {
   }
 
   const generateFourRandomIndexes = (dogList) => {
-    const shuffled = [...dogList].sort(() => 0.5 - Math.random());
+    const currentDogs = dogList.filter(dog => dog.present);
+    const shuffled = [...currentDogs].sort(() => 0.5 - Math.random());
     const listOfFourDogs = shuffled.slice(0,4);
     setFourDogsList(listOfFourDogs);
     console.log("Four dogs list: ", listOfFourDogs);

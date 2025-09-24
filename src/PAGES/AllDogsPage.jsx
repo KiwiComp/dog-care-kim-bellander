@@ -42,6 +42,8 @@ function AllDogsPage() {
                 {/* column */}
                 <button className="btnAllDogs" onClick={resetSearch}>Display all dogs</button>
 
+                <p>Filter</p>
+
                 <article className="specificSearchContainer">
                     {/* row */}
                     <article className="nameSearchContainer">
