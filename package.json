@@ -1,9 +1,12 @@
 {
   "name": "dog-care-kim-bellander",
   "private": true,
+  "homepage": "https://kiwicomp.github.io/dog-care-kim-bellander",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",

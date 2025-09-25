@@ -10,7 +10,13 @@ function DisplayDogsComponent({dog, setSelectedDog}) {
                 <img 
                 src={dog.img} 
                 alt={dog.name} 
-                onError={(e) => { e.target.src = placeholderDog }}>
+                onError={(e) => { e.target.src = placeholderDog }} // Är det denna som spökar? 
+                // onError={(e) => { 
+                //     if (e.target.src !== placeholderDog) {
+                //         e.target.src = placeholderDog; 
+                //     }
+                // }}
+                >
                 </img>
             </article>
 

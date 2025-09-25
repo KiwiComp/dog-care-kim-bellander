@@ -1,4 +1,5 @@
 import "../CSS/overlay-dog-details.css"
+import placeholderDog from "../assets/placeholder-dog.jpg"
 
 
 function OverlayDisplayDogDetailsComponent({selectedDog, setSelectedDog}) {
@@ -14,16 +15,25 @@ function OverlayDisplayDogDetailsComponent({selectedDog, setSelectedDog}) {
                 <article className="selectedDogContainer">
 
                     <article className="selectedDogImgContainer">
-                        <img src={selectedDog.img} style={{height: "22rem", width: "auto"}}></img>
+                        <img 
+                            src={selectedDog.img}
+                            alt={selectedDog.name}
+                            onError={(e) => {
+                                if (e.target.src !== placeholderDog) {
+                                    e.target.src = placeholderDog;
+                                }
+                            }}
+                            >
+                        </img>
                     </article>
 
                     <article className="selectedDogInfoContainer">
 
                         <article className="dogInfo">
                             <p><strong>Dog info</strong></p>
-                            <p>Age: {selectedDog.age} years</p>
-                            <p>Breed: {selectedDog.breed}</p>
-                            <p>Sex: {selectedDog.sex}</p>
+                            <p>Age: {selectedDog.age} {selectedDog.age === 1 ? "year" : "years"}</p>
+                            <p>Breed: {selectedDog.breed.charAt(0).toUpperCase() + selectedDog.breed.slice(1)}</p>
+                            <p>Sex: {selectedDog.sex.charAt(0).toUpperCase() + selectedDog.sex.slice(1)}</p>
                         </article>
 
                         <article className="ownerInfo">
