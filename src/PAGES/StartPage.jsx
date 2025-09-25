@@ -17,7 +17,7 @@ function StartPage() {
 
             <img className="desktopOnly" src={companyLogo} alt="company logo" style={{height: "30rem", width: "30rem"}}></img>
 
-            <p>Safely leave your dog with our doggy care since we know what your best friend means to you. 
+            <p className="welcomeTextStartPage">Safely leave your dog with our doggy care since we know what your best friend means to you. 
                 <br></br>We value good 
                 relationships and prioritise security and a safe environment for your dog!
                 <br></br><br></br>
