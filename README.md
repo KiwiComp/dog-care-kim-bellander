@@ -1,3 +1,21 @@
+# Link to my published page:
+https://kiwicomp.github.io/dog-care-kim-bellander/
+
+# Links to my previous three repos, as requested: 
+
+First try
+Github repo: https://github.com/KiwiComp/testa-hunduppgiften 
+Published page: https://kiwicomp.github.io/testa-hunduppgiften/
+
+Second try
+Github repo: https://github.com/KiwiComp/testa-hunduppgiften2 
+Published page: https://kiwicomp.github.io/testa-hunduppgiften2/
+
+Third try
+Github repo: https://github.com/KiwiComp/testa-hunduppgiften3
+Published page: https://kiwicomp.github.io/testa-hunduppgiften3/
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
