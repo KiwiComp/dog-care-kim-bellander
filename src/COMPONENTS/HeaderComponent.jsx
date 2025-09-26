@@ -11,7 +11,6 @@ function HeaderComponent() {
     return(
         <header className="header">
 
-
             {/* DESKTOP ONLY */}
             <section className="leftHeader desktopOnly">
                 <Link to="/">
@@ -20,11 +19,10 @@ function HeaderComponent() {
             </section>
             <section className="rightHeader desktopOnly">
                 <Link to="/">Start Page</Link>
-                <Link to="/all-dogs">All our dogs</Link>
+                <Link to="/all-dogs">All dogs</Link>
                 <Link to="current-dogs">Current dogs</Link>
                 <Link to="/contact">Contact</Link>
             </section>
-            {/* DESKTOP ONLY */}
 
 
             {/* MOBILE ONLY */}
@@ -36,13 +34,12 @@ function HeaderComponent() {
 
                     <article className={dropdownIsVisible ? "dropdownMenu visible" : "dropdownMenu hidden"}>
                         <Link to="/" onClick={() => setDropdownIsVisible(false)}>Start page</Link>
-                        <Link to="/all-dogs" onClick={() => setDropdownIsVisible(false)}>All our dogs</Link>
+                        <Link to="/all-dogs" onClick={() => setDropdownIsVisible(false)}>All dogs</Link>
                         <Link to="current-dogs" onClick={() => setDropdownIsVisible(false)}>Current dogs</Link>
                         <Link to="/contact" onClick={() => setDropdownIsVisible(false)}>Contact</Link>
                     </article>
                 </article>
             </section>
-            {/* MOBILE ONLY */}
 
         </header>
     )
