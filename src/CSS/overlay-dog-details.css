@@ -1,5 +1,4 @@
 
-
 .overlaySelectedDog {
     position: fixed;
     top: 0;
@@ -61,8 +60,6 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
-
-
 @media(max-width: 420px) {
     .overlayWindowSelectedDog {
         width: 90%;
@@ -88,7 +85,6 @@
     }
     
 }
-
 
 @media(min-width: 420px) {
     .overlayWindowSelectedDog {

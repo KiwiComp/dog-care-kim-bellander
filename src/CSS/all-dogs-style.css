@@ -1,5 +1,4 @@
 
-
 .allDogsPage {
     display: flex;
     flex-direction: column;
@@ -28,6 +27,7 @@
 
     .specificSearchContainer {
         flex-direction: column;
+        align-items: center;
         gap: 1rem;
     }
 }

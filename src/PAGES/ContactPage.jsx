@@ -31,14 +31,17 @@ function ContactPage() {
 
     const socialMedia = [
         {
+            id: 1,
             href: "https://www.facebook.com",
             alt: "clickable facebook icon to navigate to our facebook page",
             src: facebookIcon
         }, {
+            id: 2,
             href: "https://www.instagram.com",
             alt: "clickable instagram icon to navigate to our instagram page",
             src: instagramIcon
         },{
+            id: 3,
             href: "https://www.twitter.com",
             alt: "clickable twitter icon to navigate to our twitter page",
             src: twitterIcon
@@ -56,7 +59,7 @@ function ContactPage() {
                     <p>755 55 Uppsala</p>
                     <p className="phone"><strong>Phone number</strong></p>
                     {contactPeople.map(person => (
-                        <article className="phoneContainer">
+                        <article className="phoneContainer" key={person.name}>
                             <p>{person.name}:  {person.phoneToDisplay}</p>
                             <a href={person.phoneForHref}>
                                 <img src={phoneIcon} alt={person.imgAlt} style={{width: "1rem", height: "1rem"}}/>
@@ -65,7 +68,7 @@ function ContactPage() {
                     ))}
                     <p className="email"><strong>Email</strong></p>
                     {contactPeople.map((person => (
-                        <p>{person.name}:  {person.email}</p>
+                        <p key={person.name}>{person.name}:  {person.email}</p>
                     )))}
                 </article>
 
@@ -73,7 +76,7 @@ function ContactPage() {
 
                 <article className="contactSocialMedia">
                     {socialMedia.map((media => (
-                        <a href={media.href} target="_blank" rel="noreferrer">
+                        <a href={media.href} target="_blank" rel="noreferrer" key={media.id}>
                             <img src={media.src} alt={media.alt} style={{height: "2rem", width: "2rem"}}></img>
                         </a>
                     )))}
