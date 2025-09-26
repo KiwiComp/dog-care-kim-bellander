@@ -13,7 +13,7 @@ function StartPage() {
 
     return(
         <section className="startPage">
-            <h2>Start Page</h2>
+            <p className="welcomeTitleStartPage">Welcome!</p>
 
             <img className="desktopOnly" src={companyLogo} alt="company logo" style={{height: "30rem", width: "30rem"}}></img>
 

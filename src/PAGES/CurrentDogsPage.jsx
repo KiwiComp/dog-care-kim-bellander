@@ -14,7 +14,7 @@ function CurrentDogsPage() {
 
     return(
         <section className="currentDogsPage">
-            <h2>Our current dogs</h2>
+            <p className="titleCurrentDogs">Our current dogs</p>
             <section className="displayDogsContainer">
                 {currentDogs.map((dog) => (
                     <DisplayDogsComponent key={dog.chipNumber} dog={dog} setSelectedDog={setSelectedDog}/>

@@ -4,7 +4,7 @@ import placeholderDog from "../assets/placeholder-dog.jpg"
 function DisplayDogsComponent({dog, setSelectedDog}) {
 
     return(
-        <section className="displaySingleDogContainer" onClick={() => setSelectedDog(dog)}>
+        <section className={`displaySingleDogContainer ${dog.sex === "male" ? "male" : "female"}`} onClick={() => setSelectedDog(dog)}>
 
             <article className="dogImgContainer">
                 <img 
