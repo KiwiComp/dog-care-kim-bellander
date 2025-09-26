@@ -12,9 +12,18 @@
     justify-content: space-around;
     align-items: center;
     border-radius: 0.5rem;
-    border: 1px solid black;
     box-shadow: 3px 3px 5px 3px rgba(0,0,0,0.18), inset 0 4px 10px 2px rgba(185,172,149,0.20);
     cursor: pointer;
+}
+
+.displaySingleDogContainer.male {
+    background-color: rgb(207, 239, 230);
+    border: 1px solid rgb(48, 101, 86);
+}
+
+.displaySingleDogContainer.female {
+    background-color: rgb(221, 203, 219);
+    border: 1px solid rgb(176, 85, 101);
 }
 
 .dogImgContainer {

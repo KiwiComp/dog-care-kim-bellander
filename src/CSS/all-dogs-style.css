@@ -9,18 +9,40 @@
     background-color: rgb(240, 240, 240);
 }
 
-.allDogsPage h2 {
+.titleAllDogs {
     font-family: 'Courier New', Courier, monospace;
+}
+
+.specificSearchContainer {
+    display: flex;
 }
 
 @media(max-width: 420px) {
     .allDogsPage {
         gap: 1rem;
     }
+
+    .titleAllDogs {
+        font-size: 1.5rem;
+    }
+
+    .specificSearchContainer {
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
 
 @media(min-width: 420px) {
     .allDogsPage {
+        gap: 2rem;
+    }
+
+    .titleAllDogs {
+        font-size: 3rem;
+    }
+
+    .specificSearchContainer {
+        flex-direction: row;
         gap: 2rem;
     }
 }
@@ -47,14 +69,14 @@
     background-color: rgb(115, 160, 139);
 }
 
-.nameSearchContainer input {
+.singleSearch input, .singleSearch select {
     padding: 0.3rem;
     border-radius: 0.3rem;
     border: 1px solid gray;
     text-align: center;
 }
 
-.nameSearchContainer input:focus {
+.singleSearch input:focus {
     outline: none;
     border: 1px solid rgb(36, 75, 52);
     box-shadow: 0 0 5px #5cb08c;

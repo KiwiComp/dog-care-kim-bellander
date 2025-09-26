@@ -24,9 +24,17 @@ function App() {
     const binId = "68cd197eae596e708ff3bcf1";
     // const apiKey = import.meta.env.VITE_API_KEY.trim();
     // const apiKey = `${process.env.REACT_APP_API_KEY}`
-    const apiKey = "$2a$10$HulJZZ.ZrVsw115/WjTVeu.j9MNoofezjJ67C7NKvbK6moVrCYZmy";
+    // const apiKey = "$2a$10$HulJZZ.ZrVsw115/WjTVeu.j9MNoofezjJ67C7NKvbK6moVrCYZmy";
     // console.log("API Key:", apiKey);
+
+    const apiKey1 = import.meta.env.VITE_API_KEY1
+    const apiKey2 = "$HulJZZ"
+    const apiKey3 = import.meta.env.VITE_API_KEY3
+
+    const apiKey = `${apiKey1}${apiKey2}${apiKey3}`
+
     console.log("[" + apiKey + "]");
+    console.log("Api key type", typeof apiKey)
 
     const response = await fetch(`${baseUrl}${binId}`, {
       method: 'GET',

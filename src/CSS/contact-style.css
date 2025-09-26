@@ -21,6 +21,12 @@
     gap: 0.3rem;
 }
 
+.phoneContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
 .contactSocialMedia {
     display: flex;
     flex-direction: row;
@@ -41,6 +47,10 @@
     .contactDetails {
         align-items: center;
     }
+
+    .titleContact {
+        font-size: 1.5rem;
+    }
 }
 
 @media(min-width: 420px) {
@@ -52,5 +62,9 @@
 
     .contactSocialMedia {
         padding-top: 1rem;
+    }
+
+    .titleContact {
+        font-size: 3rem;
     }
 }

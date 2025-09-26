@@ -12,13 +12,18 @@ function AllDogsPage() {
     const {dogList} = useOutletContext();
     const [selectedDog, setSelectedDog] = useState(null);
     const [searchName, setSearchName] = useState("");
+    const [selectedBreed, setSelectedBreed] = useState("");
+    const [selectedGender, setSelectedGender] = useState("");
     const [searchList, setSearchList] = useState([]);
     const [listIsSearched, setListIsSearched] = useState(false);
 
-
+    const breedList = Array.from(new Set(dogList.map(dog => dog.breed))).sort((a, b) => a.localeCompare(b));
+    const genderList = Array.from(new Set(dogList.map(dog => dog.sex))).sort((a, b) => a.localeCompare(b));
 
     const searchDogByName = (searchName => {
         setSearchList([]);
+        setSelectedBreed("");
+        setSelectedGender("");
         let filteredList = dogList.filter(dog => dog.name.toLowerCase().includes(searchName.toLowerCase()));
         setSearchList(filteredList);
 
@@ -27,8 +32,34 @@ function AllDogsPage() {
         }
     })
 
+    const searchDogByBreed = (searchBreed => {
+        setSearchList([]);
+        setSelectedGender("");
+        let filteredList = dogList.filter(dog =>
+            dog.breed.toLowerCase().includes(searchBreed.toLowerCase())
+        )
+        setSearchList(filteredList);
+        if(filteredList.length > 0) {
+            setListIsSearched(true);
+        }
+    })
+
+    const searchDogByGender = (gender => {
+        setSearchList([]);
+        setSelectedBreed("");
+        let filteredList = dogList.filter( dog =>
+            dog.sex.toLowerCase().includes(gender.toLowerCase())
+        )
+        setSearchList(filteredList);
+        if(filteredList.length > 0) {
+            setListIsSearched(true)
+        }
+    })
+
     const resetSearch = () => {
         setSearchName("");
+        setSelectedBreed("");
+        setSelectedGender("");
         setSearchList([]);
         setListIsSearched(false);
     }
@@ -38,15 +69,15 @@ function AllDogsPage() {
 
     return(
         <section className="allDogsPage">
-            <h2>All of our dogs</h2>
+            <p className="titleAllDogs">All of our dogs</p>
 
             <section className="searchDogsContainer">
-                <button className="btnAllDogs" onClick={resetSearch}>Display all dogs</button>
+                <button className="btnAllDogs" onClick={resetSearch}>Clear filters</button>
 
-                <p>Filter</p>
+                <p>Filters</p>
 
                 <article className="specificSearchContainer">
-                    <article className="nameSearchContainer">
+                    <article className="singleSearch nameSearchContainer">
                         <input 
                             type="text" 
                             placeholder="Name of dog"
@@ -57,6 +88,51 @@ function AllDogsPage() {
                                 searchDogByName(value);
                             }}
                         />
+                    </article>
+                        
+                    <article className="singleSearch breedSearchContainer">
+                        <select
+                            value={selectedBreed}
+                            onChange={(event) => {
+                                const value = event.target.value;
+                                setSelectedBreed(event.target.value);
+                                searchDogByBreed(value);
+                                }
+                            }
+                        >
+                            <option value="">-- Select breed</option>
+                            {breedList.map(breed => (
+                                <option 
+                                    key={breed} 
+                                    value={breed}
+                                >
+                                    {breed.charAt(0).toUpperCase() + breed.slice(1)}
+                                </option>
+                            ))}
+                        </select>
+                    </article>
+
+
+                    <article className="singleSearch genderSearchContainer">
+                        <select
+                            value={selectedGender}
+                            onChange={(event) => {
+                                const value = event.target.value;
+                                setSelectedGender(event.target.value);
+                                searchDogByGender(value);
+                                }
+                            }
+                        >
+                            <option value="">-- Select gender</option>
+                            {genderList.map(gender => (
+                                <option 
+                                    key={gender} 
+                                    value={gender}
+                                >
+                                    {gender.charAt(0).toUpperCase() + gender.slice(1)}
+                                </option>
+                            ))}
+                        </select>
                     </article>
                     
                 </article>

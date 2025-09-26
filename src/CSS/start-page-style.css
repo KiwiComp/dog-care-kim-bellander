@@ -6,6 +6,7 @@
     justify-content: center;
     margin: 2rem;
     background-color: rgb(240, 240, 240);
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .welcomeTextStartPage {
@@ -17,10 +18,18 @@
     .startPage {
         gap: 1rem;
     }
+
+    .welcomeTitleStartPage {
+        font-size: 1.5rem;
+    }
 }
 
 @media(min-width: 420px) {
     .startPage {
         gap: 2rem;
+    }
+
+    .welcomeTitleStartPage {
+        font-size: 3rem;
     }
 }
